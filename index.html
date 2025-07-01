@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LavinItAt20</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background: #fff0f5;
+      text-align: center;
+      padding: 40px;
+    }
+    .question {
+      margin-top: 40px;
+      font-size: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background-color: #ff69b4;
+      color: white;
+      cursor: pointer;
+    }
+    #final-message {
+      margin-top: 60px;
+      font-size: 26px;
+      color: #d10068;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎉 Welcome to LavinItAt20 🎉</h1>
+  <p>Let’s see if you know the birthday vibes 😏</p>
+
+  <div id="game">
+    <div class="question" id="q1">
+      <p>1. How do I call you when I'm not happy about something?</p>
+      <button onclick="nextQuestion('q1', 'q2', false)">Darling</button>
+      <button onclick="nextQuestion('q1', 'q2', false)">B</button>
+      <button onclick="nextQuestion('q1', 'q2', false)">Sayang</button>
+      <button onclick="nextQuestion('q1', 'q2', true)">Lavanya</button>
+    </div>
+
+    <div class="question" id="q2" style="display:none;">
+      <p>2. What is the hashtag of this party?</p>
+      <button onclick="nextQuestion('q2', 'q3', true)">LavinItAt20</button>
+      <button onclick="nextQuestion('q2', 'q3', false)">NeverLavedBehindFor20</button>
+    </div>
+
+    <div class="question" id="q3" style="display:none;">
+      <p>3. Who is the person that loves you unconditionally?</p>
+      <button onclick="nextQuestion('q3', 'q4', true)">Shachin</button>
+      <button onclick="nextQuestion('q3', 'q4', true)">Shachin Kesevan</button>
+    </div>
+
+    <div class="question" id="q4" style="display:none;">
+      <p>4. Which dog loves you the most?</p>
+      <button onclick="showFinal(true)">Luna</button>
+      <button onclick="showFinal(true)">Gundu boi</button>
+      <button onclick="showFinal(true)">Shachin</button>
+    </div>
+
+    <div id="final-message">
+      <h2>✨ You got everything right ✨</h2>
+      <p>You’re now officially... <br><strong style="font-size: 30px;">💖 LavinItAt20 💖</strong></p>
+      <p>I love you today, tomorrow and forever — and I can't wait to have you as my life partner 🫶</p>
+    </div>
+  </div>
+
+  <script>
+    function nextQuestion(currentId, nextId, correct) {
+      if (correct) {
+        document.getElementById(currentId).style.display = 'none';
+        document.getElementById(nextId).style.display = 'block';
+      } else {
+        alert("Hehe wrong answer 😝 Try again, baby girl!");
+      }
+    }
+
+    function showFinal(correct) {
+      if (correct) {
+        document.getElementById('q4').style.display = 'none';
+        document.getElementById('final-message').style.display = 'block';
+      } else {
+        alert("Hmm… you sure? Try again 😜");
+      }
+    }
+  </script>
+
+</body>
+</html>
